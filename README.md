@@ -1,1 +1,2 @@
-# DTCCuration
+# DTC
+건강기능식품 큐레이션 서비스
