@@ -30,7 +30,7 @@
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
 
         <script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
-        <script>Kakao.init('cfc81e62495a8be34ee51bcc44f563bf');</script>
+        <script>Kakao.init('8420fdea8aee63bc5d0d28e748384f6b');</script>
     </head>
 
     <body class="container-md">
@@ -130,7 +130,7 @@
                                         [세트 3] 홍삼 1 + 1<br>
                                     </p>
                                 </div>
-                                <div class="card-footer"><button class="card-link btn btn-normal btn-radius" onclick="location.href='https://www.qualqual.co.kr/q/6E9cU9zgl'">구매하기</button></div>
+                                <div class="card-footer"><button class="card-link btn btn-normal btn-radius" onclick="presentPurchase();">구매하기</button></div>
                             </div>
                         </div>
                         <div id="categoryA" class="col category-fixed"> <!-- 피로 회복 -->
@@ -142,7 +142,7 @@
                                     <p class="card-nutrient"><b>핵심 영양성분: </b>밀크씨슬, 비타민B</p>
                                     <img src="./image/product/간비.jpg" class="card-img" alt="card1">
                                 </div>
-                                <div class="card-footer"><button class="card-link btn btn-normal btn-radius" onclick="location.href='https://www.qualqual.co.kr/q/6EdzqmGs7'">구매하기</button></div>
+                                <div class="card-footer"><button class="card-link btn btn-normal btn-radius" onclick="commonPurchase1();">구매하기</button></div>
                             </div>
                         </div>
                         <div id="categoryB" class="col category-fixed"> <!-- 면역력 증진 -->
@@ -154,7 +154,7 @@
                                     <p class="card-nutrient"><b>핵심 영양성분: </b>홍삼, 프로폴리스</p>
                                     <img src="./image/product/홍삼.jpg" class="card-img" alt="card2">
                                 </div>
-                                <div class="card-footer"><button class="card-link btn btn-normal btn-radius" onclick="location.href='https://www.qualqual.co.kr/q/6EczcM980'">구매하기</button></div>
+                                <div class="card-footer"><button class="card-link btn btn-normal btn-radius" onclick="commonPurchase2();">구매하기</button></div>
                             </div>
                         </div>
                         <div id="categoryC" class="col category-fixed"> <!-- 눈 건강 -->
@@ -167,7 +167,7 @@
                                     <!-- <img src="./image/product/오메가3.jpg" class="card-img" alt="card3">  -->
                                 </div>
                                 <div class="card-footer">
-                                    <!-- <button class="card-link btn btn-normal btn-radius" onclick="location.href='https://www.qualqual.co.kr/q/6Ed0nQ6GL'">구매하기</button> -->
+                                    <!-- <button class="card-link btn btn-normal btn-radius" onclick="commonPurchase3();">구매하기</button> -->
                                 </div>
                             </div>
                         </div>
@@ -180,7 +180,7 @@
                                     <p class="card-nutrient"><b>핵심 영양성분: </b>유산균</p>
                                     <img src="./image/product/프리바이오틱스.jpg" class="card-img" alt="card4">
                                 </div>
-                                <div class="card-footer"><button class="card-link btn btn-normal btn-radius" onclick="location.href='https://www.qualqual.co.kr/q/6EcPqBQHi'">구매하기</button></div>
+                                <div class="card-footer"><button class="card-link btn btn-normal btn-radius" onclick="commonPurchase4();">구매하기</button></div>
                             </div>
                         </div>
                         <div id="categoryE" class="col"> <!-- 큐레이션 파트 -->
@@ -192,7 +192,7 @@
                                     <p id="Ecard-nutrient"><b>핵심 영양성분: </b></p>
                                     <img id="Ecard-img" src="" alt="card5">
                                 </div>
-                                <div class="card-footer"><button class="card-link btn btn-normal btn-radius">구매하기</button></div>
+                                <div class="card-footer"><button class="card-link btn btn-normal btn-radius" onclick="goCuration();">구매하기</button></div>
                             </div>
                         </div>
                     </div>
@@ -439,11 +439,111 @@
                 }
             }    
 
+            function goCuration(){
+                var group = groupSelection();
+                //A1MF 피부 관리
+                const curationPurchase1 = () => {
+                    Kakao.Link.sendCustom({templateId: Number("52543")});
+                    return false;
+                }
+                //A2M (없음)
+                // const curationPurchase2 = () => {
+                //     Kakao.Link.sendCustom({templateId: Number("")});
+                //     return false;
+                // }
+                //A2F 여성 건강(갱년기)
+                const curationPurchase3 = () => {
+                    Kakao.Link.sendCustom({templateId: Number("52544")});
+                    return false;
+                }
+                //A3MF 뼈/관절
+                const curationPurchase4 = () => {
+                    Kakao.Link.sendCustom({templateId: Number("52545")});
+                    return false;
+                }
+
+                if(group == "A1MF"){
+                    curationPurchase1();
+                }
+                // else if(group == "A2M"){
+                //     curationPurchase2();
+                // }
+                else if(group == "A2F"){
+                    curationPurchase3();
+                }
+                else {
+                    curationPurchase4();
+                }
+            }
+
 
             function goPurchase(){
                 var group = groupSelection();
-                location.href = card[group]["link-total"];
+                //A1MF
+                const totalPurchase1 = () => {
+                    Kakao.Link.sendCustom({templateId: Number("52534")});
+                    return false;
+                }
+                //A2M
+                const totalPurchase2 = () => {
+                    Kakao.Link.sendCustom({templateId: Number("52535")});
+                    return false;
+                }
+                //A2F
+                const totalPurchase3 = () => {
+                    Kakao.Link.sendCustom({templateId: Number("52536")});
+                    return false;
+                }
+                //A3MF
+                const totalPurchase4 = () => {
+                    Kakao.Link.sendCustom({templateId: Number("52537")});
+                    return false;
+                }
+
+                if(group == "A1MF"){
+                    totalPurchase1();
+                }
+                else if(group == "A2M"){
+                    totalPurchase2();
+                }
+                else if(group == "A2F"){
+                    totalPurchase3();
+                }
+                else {
+                    totalPurchase4();
+                }
             }
+        
+        // 선물 세트
+        const presentPurchase = () => {
+                Kakao.Link.sendCustom({templateId: Number("52538")});
+                return false;
+        }
+
+        // 피로 회복
+        const commonPurchase1 = () => {
+                Kakao.Link.sendCustom({templateId: Number("52539")});
+                return false;
+        }
+
+        // 면역력 증진
+        const commonPurchase2 = () => {
+                Kakao.Link.sendCustom({templateId: Number("52540")});
+                return false;
+        }
+        
+        // 눈 건강
+        const commonPurchase3 = () => {
+                Kakao.Link.sendCustom({templateId: Number("52541")});
+                return false;
+        }
+
+        // 장 건강
+        const commonPurchase4 = () => {
+                Kakao.Link.sendCustom({templateId: Number("52542")});
+                return false;
+        }
+        
         </script>
         <script type="text/javascript"> // 레이어 팝업
             $( document ).ready(function() {
