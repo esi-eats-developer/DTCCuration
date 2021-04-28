@@ -7,8 +7,7 @@ var card = {
         "nutrient" : "콜라겐, 비타민C",
         "img" : "",
         "special" : "",
-        "link" : ""
-        // https://www.qualqual.co.kr/q/2xFmlwzWA
+        "link" : "https://www.qualqual.co.kr/q/2xFmlwzWA"
     },
     // <!-- A2M 대상 카드 -->
     "A2M" : {
@@ -26,16 +25,14 @@ var card = {
         "nutrient" : "칼슘, 마그네슘",
         "img" : "",
         "special" : "",
-        "link" : ""
-        // https://www.qualqual.co.kr/q/2xF3g4Xiy
+        "link" : "https://www.qualqual.co.kr/q/2xF3g4Xiy"
     },
     "A3MF" : {
         "title" : "뼈/관절",
         "text" : "날이 갈수록 시리고 뻐근한 몸. 관절 및 연골의 필수 구성성분도 섭취를 통해 간단히 챙길 수 있어요!",
-        "nutrient" : "MSM",
+        "nutrient" : "칼슘, MSM",
         "img" : "",
         "special" : "",
-        "link" : ""
-        // https://www.qualqual.co.kr/q/6EbOQmS1u
+        "link" : "https://www.qualqual.co.kr/q/6EbOQmS1u"
     }
 }
