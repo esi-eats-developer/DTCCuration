@@ -32,7 +32,6 @@
         <script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
         <script>Kakao.init('8420fdea8aee63bc5d0d28e748384f6b');</script>
 
-        <!-- Global site tag (gtag.js) - Google Analytics -->
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-Z2Q3V114S7"></script>
         <script>
             window.dataLayer = window.dataLayer || [];
@@ -131,10 +130,6 @@
                                 <div class="card-body">
                                     <h5 class="card-title" style="color:#DE142F;">★최대 50% 할인★<br>가정의 달 선물용 맞춤 세트</h5>
                                     <p><b>행사 기간: </b>4/28(수)-5/4(화)</p>
-                                    <!-- <p class="card-text">
-                                        5월 가정의 달 맞이 선물용 특별 세트 구성! 
-                                        연령/성별 불문 꼭 필요한 영양성분만 담았어요!
-                                    </p> -->
                                     <img src="./image/special.jpg" class="card-img card-special-img" alt="card-special-img">
                                     <br>
                                     <p class="card-text" style="color: black;">
@@ -147,7 +142,7 @@
                                 <div class="card-footer"><button class="card-link btn btn-normal btn-radius" onclick="presentPurchase();">구매하기</button></div>
                             </div>
                         </div>
-                        <div id="categoryA" class="col category-fixed"> <!-- 피로 회복 -->
+                        <div id="categoryA" class="col category-fixed">
                             <div class="card card-block mt-2" style="width: 20rem;" >
                                 <div class="card-body">
                                     <h5 class="card-title">피로 회복</h5>
@@ -159,7 +154,7 @@
                                 <div class="card-footer"><button class="card-link btn btn-normal btn-radius" onclick="commonPurchase1();">구매하기</button></div>
                             </div>
                         </div>
-                        <div id="categoryB" class="col category-fixed"> <!-- 면역력 증진 -->
+                        <div id="categoryB" class="col category-fixed">
                             <div class="card card-block mt-2" style="width: 20rem;">
                                 <div class="card-body">
                                     <h5 class="card-title">면역력 증진</h5>
@@ -171,7 +166,7 @@
                                 <div class="card-footer"><button class="card-link btn btn-normal btn-radius" onclick="commonPurchase2();">구매하기</button></div>
                             </div>
                         </div>
-                        <div id="categoryC" class="col category-fixed"> <!-- 눈 건강 -->
+                        <div id="categoryC" class="col category-fixed"> 
                             <div class="card card-block mt-2">
                                 <div class="card-body">
                                     <h5 class="card-title">눈 건강</h5>
@@ -185,11 +180,11 @@
                                 </div>
                             </div>
                         </div>
-                        <div id="categoryD" class="col"> <!-- 장 건강 -->
+                        <div id="categoryD" class="col">
                             <div class="card card-block mt-2">
                                 <div class="card-body">
                                     <h5 class="card-title">장 건강</h5>
-                                    <p class="card-special" style="color:yellowgreen; font-weight: bolder;"></p> <!-- 추가 설명 / 특이사항-->
+                                    <p class="card-special" style="color:yellowgreen; font-weight: bolder;"></p> 
                                     <p class="card-text">기름지고 자극적인 배달음식 섭취가 증가하면서, 장 내 유해균 관리가 필요해졌어요!</p>
                                     <p class="card-nutrient"><b>핵심 영양성분: </b>유산균</p>
                                     <img src="./image/product/프리바이오틱스.jpg" class="card-img" alt="card4">
@@ -223,7 +218,7 @@
         <script type="text/javascript" src="./js/question.js"></script>
         <script type="text/javascript" src="./js/card.js"></script>
         <script type="text/javascript">
-            $(".survey").hide(); // 메인 페이지에 등장하지 않도록 숨김 처리
+            $(".survey").hide();
             $(".result").hide();
 
             var num = 1;
@@ -338,7 +333,6 @@
 
                     if(num == 4){
                         $("#qSubTitle").attr("style", "display: ");
-                        // 가격대 선택 안 되도록 설정함
 
                         $("#selection2").prop('disabled', true);
                         $("#selection3").prop('disabled', true);
@@ -427,20 +421,11 @@
                     return false;
                 }
 
-                if(group == "A1MF"){
-                    totalPurchase1();
-                }
-                else if(group == "A2M"){
-                    totalPurchase2();
-                }
-                else if(group == "A2F"){
-                    totalPurchase3();
-                }
-                else {
-                    totalPurchase4();
-                }
+                if(group == "A1MF"){totalPurchase1();}
+                else if(group == "A2M"){totalPurchase2();}
+                else if(group == "A2F"){totalPurchase3();}
+                else {totalPurchase4();}
             }
-        
         // 선물 세트
         const presentPurchase = () => {
                 Kakao.Link.sendCustom({templateId: Number("52538")});
@@ -470,7 +455,6 @@
                 Kakao.Link.sendCustom({templateId: Number("52542")});
                 return false;
         }
-        
         </script>
     </body>
 </html>
