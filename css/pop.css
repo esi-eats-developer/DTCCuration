@@ -27,13 +27,13 @@
 }
 
 .modal {
-  width: 400px;
-  height: 300px;
+  width: 800px;
+  height: 600px;
   display: block;
   margin: 50% 0 0 -200px;
   position: relative;
   top: 50%; 
-  left: 50%;
+  left: 35%;
   background: #fff;
   opacity: 0;
   /* transition: all 0.5s ease-in-out; */
@@ -69,6 +69,6 @@
 }
 
 .event-img{
-  width: 105px;
-  height: 148.5px;
+  width: 262.5px;
+  height: 371.25px;
 }
